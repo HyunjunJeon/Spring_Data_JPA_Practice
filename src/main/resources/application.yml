@@ -17,4 +17,4 @@ logging:
   level:
     org:
       hibernate:
-        SQL: debug
+        SQL: debug # Hibernate에서 ?에 실제 어떤값이 들어가는지 확인시켜줌

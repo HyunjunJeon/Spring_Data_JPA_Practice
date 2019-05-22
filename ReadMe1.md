@@ -80,3 +80,27 @@
 - Persistent: JPA가 관리중인 상태(1차 캐시, Dirty Checking & Write Behind)
 - Detached: JPA가 더이상 관리하지 않는 상태
 - Removed: JPA가 관리하긴 하지만 삭제하기로 한 상태
+
+## Fetch
+연관 관계의 엔티티를 어떻게 가져올 것인가, 지금(Eager)? 나중(Lazy)?
+- @OneToMany 의 기본값은 LAZY
+- @ManyToOne 의 기본값은 EAGER
+
+## Query
+1. JPQL(HQL)
+2. Criteria(typesafe 한 쿼리)
+3. Native Query(실제 쿼리를 실행)
+
+## 스프링 데이터 JPA의 원리와 소개
+1. JpaRepository<Entity, Id> 인터페이스 (@Repository가 없어도 빈 등록됌)
+2. SpringBoot 환경이 아니라면 -> @EnableJpaRepositories
+3. 위 애너테이션에 들어가보면,,, @Import(JpaRepositoriesRegistrar.class)
+4. 따라서 진짜 핵심은 ImportBeanDefinitionRegistrar 인터페이스(코딩으로 Bean을 등록시키는)
+
+# 정리
+JPA 사용법 및 특징
+++'SQL'++ 확인은 필수중에 필수!!!!!
+application.properties에서 SQL을 좀 더 자세히 보려면 둘 중에 하나 사용
+    - logging.level.org.hibernate.SQL = debug
+    - logging.level.org.hibernate.type.descriptor.sql = TRACE
+    
