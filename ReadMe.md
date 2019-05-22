@@ -52,3 +52,31 @@
     - AttributeOverrides
     - AttributeOverride
 
+## 1:N Mapping
+
+1. 관계에는 항상 2개의 엔티티가 존재
+    - 하나는 주인, 하나는 종속
+    - 해당 관계의 반대쪽 레퍼런스를 가지고 있는 쪽이 주인
+    
+2. 단방향에서 관계의 주인은
+    - 관계를 정의한 쪽
+    @ManyToOne
+      기본값은 FK 생성
+    @OneToMany
+      기본값은 Join Table 생성
+ 
+ 3. 양방향
+    - FK를 가지고 있는 쪽이 Owner
+    따라서 기본값은 @ManyToOne을 가지고 있는 쪽이 주인
+    - 주인이 아닌 쪽(@OneToMany)에서는 
+    mappedBy 사용해서 관계를 맺고 있는 필드를 설정
+    - 주인한테 관계를 설정해야 DB에 반영됌
+    
+## Cascade
+엔티티의 상태 변화를 전파시키는 옵션
+
+1. 엔티티의 상태
+- Transient: JPA가 모르는 상태
+- Persistent: JPA가 관리중인 상태(1차 캐시, Dirty Checking & Write Behind)
+- Detached: JPA가 더이상 관리하지 않는 상태
+- Removed: JPA가 관리하긴 하지만 삭제하기로 한 상태
