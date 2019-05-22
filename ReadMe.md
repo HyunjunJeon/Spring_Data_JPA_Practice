@@ -1,7 +1,7 @@
 # Spring Data JPA
 
 ## Entity Mapping
-### Annotation 종류
+### Annotation 
 1. Entity
    - '객체'쪽에서 부르는 이름
    - 클래스와 같은 이름을 사용하기 때문에 값을 변경하지는 않으나 name 속성을 변경이 가능함
@@ -32,3 +32,23 @@
 7. Transient
     - 컬럼으로 매핑하고 싶지 않은 필드에 사용
     
+## Value Mapping
+### Annotation 
+
+1. Entity 타입과 Value 타입 구분
+    - 식별자가 있어야 하는가
+    - 독립적으로 존재해야 하는가
+
+2. Value 타입의 종류
+    - Primitive 타입(String, Date, Boolean, ...)
+    - Composite 타입
+    - Collection 타입
+        - Primitive 타입의 컬렉션
+        - Composite 타입의 컬렉션
+        
+ 3. Composite Value Type Mapping
+    - Embeddable
+    - Embedded
+    - AttributeOverrides
+    - AttributeOverride
+
