@@ -31,4 +31,20 @@ Repository 인터페이스로 공개할 메서드를 직접 정의하고 싶다�
     @NonNullApi
     @NonNull
     @Nullable
+    
+## 쿼리 만들기
+1. 메서드 이름을 분석해서 쿼리 만들기( @EnableJpaRepositories(queryLookupStrategy = QueryLookupStrategy.Key.CREATE) )
+2. 미리 정의해둔 쿼리를 찾아서 사용하기( @EnableJpaRepositories(queryLookupStrategy = QueryLookupStrategy.Key.USE_DECLARED_QUERY) )
+3. default: 미리 정의한 쿼리를 찾아보고 없다면 만들기( @EnableJpaRepositories(queryLookupStrategy = QueryLookupStrategy.Key.CREATE_IF_NOT_FOUND) )
+
+쿼리 만드는법(메서드)
+Return_Type {접두어}{도입부}By{프로퍼티 표현식}{조건식}[And|Or{프로퍼티 표현식}(조건식)]{정렬 조건} (매개변수)
+
+접두어: find, get, query, count, ...
+도입부: Distinct, First, Top, ...
+프로퍼티 표현식: Person.Address.ZipCode -> find(Person)ByAddress_ZipCode
+조건식: IgnoreCase, Between, LessThan, GreaterThan, Like, Contains, ...
+정렬 조건: OrderBy{프로퍼티}[Asc|Desc]
+리턴 타입: E, Optional<E>, List<E>, Page<E>, Slice<E>, Stream<E>
+매개변수: Pageable, Sort, Primitive Type, ... 
 

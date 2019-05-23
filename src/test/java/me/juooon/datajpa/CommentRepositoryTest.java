@@ -40,5 +40,6 @@ public class CommentRepositoryTest {
         // assertThat(byId).isNull(); // Optional은 Null을 리턴하지 않음
         assertThat(byId).isEmpty(); // isEmpty 는 Optional이 비어있는지 체크함(Null은 나오지 않음)
         // Comment comment1 = byId.orElseThrow(IllegalArgumentException::new); // 무조건 Exception이 발생하는 경우라서.. 보기만하고 주석처리함
+
     }
 }
