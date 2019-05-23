@@ -1,4 +1,4 @@
-package me.juooon.datajpa;
+package me.juooon.datajpa.ver1;
 
 import javax.persistence.Embeddable;
 

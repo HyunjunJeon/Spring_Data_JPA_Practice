@@ -1,5 +1,7 @@
-package me.juooon.datajpa;
+package me.juooon.datajpa.ver1;
 
+import me.juooon.datajpa.ver1.Post;
+import me.juooon.datajpa.ver1.PostRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

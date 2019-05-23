@@ -1,4 +1,4 @@
-package me.juooon.datajpa;
+package me.juooon.datajpa.ver1;
 
 import org.hibernate.Session;
 import org.springframework.boot.ApplicationArguments;

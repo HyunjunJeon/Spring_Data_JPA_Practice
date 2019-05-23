@@ -1,4 +1,4 @@
-package me.juooon.datajpa;
+package me.juooon.datajpa.ver1;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,16 +7,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.util.Date;
 
 @Getter @Setter
 @Entity
-class Study {
+public class Comment {
     @Id @GeneratedValue
     private Long id;
 
-    private String name;
+    private String comment;
+    private Date created;
+    private Integer likeCount = 0;
 
-    @ManyToOne // 반대쪽에 대한 Entity를 참조하고 있으므로 '주인'
-    private Account owner;
-
+    @ManyToOne
+    private Post post;
 }

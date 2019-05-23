@@ -1,10 +1,11 @@
-package me.juooon.datajpa;
+package me.juooon.datajpa.ver1;
 
+import me.juooon.datajpa.ver1.Comment;
+import me.juooon.datajpa.ver1.CommentRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
